@@ -9,5 +9,5 @@ Author: Raymond Chu
 * project information – https://osera.cs.grinnell.edu/ttap/data-structures-labs/the-sounds-of-sorting.html
 * Visual Studio Code – I used it to write the code
 * Maven – I used it to run the code 
-* Oracle Java API Documentation – to check for Java and Swing GUI methods. 
+* Oracle Java API Documentation – to check for Java and Swing GUI info. 
 * Java Version 18.0.2
