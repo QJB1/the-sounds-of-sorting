@@ -128,8 +128,9 @@ public class Sorts {
         return events;
     }
 
-    private static <T extends Comparable<? super T>> void mergeSortH(T[] arr, T[] aux, int low, int high, List<SortEvent<Integer>> events) {
-        if (low >= high){
+    private static <T extends Comparable<? super T>> void 
+        mergeSortH(T[] arr, T[] aux, int low, int high, List<SortEvent<Integer>> events) {
+        if (low >= high) {
             return;
         }
         int mid = (low + high) / 2;
@@ -138,7 +139,8 @@ public class Sorts {
         merge(arr, aux, low, mid, high, events);
     }
 
-    private static <T extends Comparable<? super T>> void merge(T[] src, T[] dest, int low, int mid, int high, List<SortEvent<Integer>> events) {
+    private static <T extends Comparable<? super T>> void 
+        merge(T[] src, T[] dest, int low, int mid, int high, List<SortEvent<Integer>> events) {
         int i = low, j = mid + 1;
         for (int k = low; k <= high; k++) {
             if (i > mid) {
@@ -147,7 +149,8 @@ public class Sorts {
                 j++;
             } else if (j > high) {
                 dest[k] = src[i];
-                events.add(new CopyEvent<>(k, (Integer) src[i])); // events.add(new CopyEvent<>(k, src[i]));
+                events.add(new CopyEvent<>(k, (Integer) src[i])); 
+                // events.add(new CopyEvent<>(k, src[i]));
                 i++;
             } else {
                 events.add(new CompareEvent<>(i, j));
@@ -175,7 +178,8 @@ public class Sorts {
         return events;
     }
 
-    private static <T extends Comparable<? super T>> void quickSortH(T[] arr, int low, int high, List<SortEvent<Integer>> events) {
+    private static <T extends Comparable<? super T>> void 
+        quickSortH(T[] arr, int low, int high, List<SortEvent<Integer>> events) {
         if (low < high) {
             int p = helper(arr, low, high, events);
             quickSortH(arr, low, p - 1, events);
@@ -183,7 +187,8 @@ public class Sorts {
         }
     }
 
-    private static <T extends Comparable<? super T>> int helper(T[] arr, int low, int high, List<SortEvent<Integer>> events) {
+    private static <T extends Comparable<? super T>> int 
+        helper(T[] arr, int low, int high, List<SortEvent<Integer>> events) {
         T pivot = arr[high];
         int i = low;
         for (int j = low; j < high; j++) {
@@ -263,5 +268,4 @@ public class Sorts {
             event.apply(arr);
         }
     }
-
 }

@@ -1,0 +1,12 @@
+edu.grinnell.csc207.soundsofsorting.sortevents.CompareEvent@57aca0fe
+edu.grinnell.csc207.soundsofsorting.sortevents.CompareEvent@77e91b3b
+edu.grinnell.csc207.soundsofsorting.sortevents.CompareEvent@6c07d19
+edu.grinnell.csc207.soundsofsorting.sortevents.CompareEvent@7eb11e7e
+edu.grinnell.csc207.soundsofsorting.sortevents.SwapEvent@4ca8ea06
+edu.grinnell.csc207.soundsofsorting.sortevents.CompareEvent@73a7006b
+edu.grinnell.csc207.soundsofsorting.sortevents.CompareEvent@760a83b3
+edu.grinnell.csc207.soundsofsorting.sortevents.CompareEvent@be21e2
+edu.grinnell.csc207.soundsofsorting.sortevents.CompareEvent@bcd1329
+edu.grinnell.csc207.soundsofsorting.sortevents.CompareEvent@40a2ee63
+edu.grinnell.csc207.soundsofsorting.sortevents.SwapEvent@6297fadf
+edu.grinnell.csc207.soundsofsorting.sortevents.CompareEvent@1357665e

@@ -142,7 +142,8 @@ public class ControlPanel extends JPanel {
                 List<SortEvent<Integer>> events = new java.util.LinkedList<>();
 
                 Integer[] copy = Arrays.copyOf(notes.getNotes(), notes.getNotes().length);
-                List<SortEvent<Integer>> generated = generateEvents((String) sorts.getSelectedItem(), copy);
+                List<SortEvent<Integer>> generated = 
+                    generateEvents((String) sorts.getSelectedItem(), copy);
                 events.addAll(generated);
                 
                 // NOTE: The Timer class repetitively invokes a method at a
@@ -157,7 +158,6 @@ public class ControlPanel extends JPanel {
                     @Override
                     public void run() {
                         if (index < events.size()) {
-                            SortEvent<Integer> e = events.get(index++);
                             // TODO: fill me in!
                             // 1. Apply the next sort event.
                             // 3. Play the corresponding notes denoted by the
@@ -174,7 +174,7 @@ public class ControlPanel extends JPanel {
                         } else {
                             this.cancel();
                             panel.repaint();
-                            // isSorting = false;                       
+                            isSorting = false;          // was not here              
                         }
                     }
                 }, 0, toPeriod(FPS));

@@ -1,6 +1,7 @@
 package edu.grinnell.csc207.soundsofsorting;
 import java.awt.Dimension;
 import java.awt.Graphics;
+import java.awt.Color;
 
 import javax.swing.JPanel;
 
@@ -22,9 +23,13 @@ public class ArrayPanel extends JPanel {
         this.setPreferredSize(new Dimension(width, height));
     }
 
+    /**
+     * Creates all the graphics and bars, and adjusts the color and height continuously
+     * 
+     * @param g the Graphics library for drawing onto
+     */
     @Override
-    public void paintComponent(Graphics g) {
-        // TODO: fill me in!
+    protected void paintComponent(Graphics g) {
         super.paintComponent(g);
 
         Integer[] noteArray = notes.getNotes();
@@ -33,39 +38,23 @@ public class ArrayPanel extends JPanel {
         int barWidth = width / noteArray.length;
 
         for (int i = 0; i < noteArray.length; i++) {
-            int barHeight = (int) ((double) noteArray[i] / (noteArray.length - 1) * height);
+            // calculates the height of the bars based on noteArray length
+            double ratio = (double) noteArray[i] / (noteArray.length - 1);
+            int barHeight = (int) (ratio * height);
 
+            // changes the highlighted color to red and calculates the green & blue gradients
             if (notes.isHighlighted(i)) {
-                g.setColor(java.awt.Color.RED); // highlight = red
+                g.setColor(Color.RED);
             } else {
-                // a green-to-blue gradient based on height
-                float ratio = (float) noteArray[i] / (noteArray.length - 1);
                 int red = 50;
                 int green = (int) (255 * (1 - ratio));
                 int blue = (int) (255 * ratio);
-                g.setColor(new java.awt.Color(red, green, blue));
+                g.setColor(new Color(red, green, blue));
             }
 
+            // draws the bar at the bottom
             g.fillRect(i * barWidth, height - barHeight, barWidth, barHeight);
         }
-        /*
-        super.paintComponent(g);
-        int width = getWidth();
-        int height = getHeight();
-        Integer[] noteArray = notes.getNotes();
-        int barWidth = width / noteArray.length;
-
-        notes.clearAllHighlighted(); 
-
-        for (int i = 0; i < noteArray.length; i++) {
-            int barHeight = (int) ((double) noteArray[i] / (noteArray.length - 1) * height);
-            if (notes.isHighlighted(i)) {
-                g.setColor(java.awt.Color.RED);
-            } else {
-                g.setColor(java.awt.Color.BLACK);
-            }
-            g.fillRect(i * barWidth, height - barHeight, barWidth, barHeight);
-        }
-        */
     }
+    
 }

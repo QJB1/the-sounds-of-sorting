@@ -10,6 +10,12 @@ public class SwapEvent<T> implements SortEvent<T> {
     private final int index1;
     private final int index2;
 
+    /**
+     * Constructs a SwapEvent Object to swap value between two indices.
+     *
+     * @param index1 the first index being swapped
+     * @param index2 the second index being swapped
+     */
     public SwapEvent(int index1, int index2) {
         this.index1 = index1;
         this.index2 = index2;
